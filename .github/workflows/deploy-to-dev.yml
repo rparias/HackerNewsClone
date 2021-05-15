@@ -1,21 +1,36 @@
 name: Deploy to Dev
 
-on:
-  workflow_run:
-    workflows: ['test']
-    types:
-      - completed
+on: push
 
 jobs:
-  publishMasterCommit:
-    name: Publish to Netlify - DEV
+  deploy-to-dev:
     runs-on: ubuntu-latest
-    #if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
 
       - name: Install Dependencies
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm run test
+
+      - name: Build
         run: npm run build
 
       - name: Deploy development to Netlify
