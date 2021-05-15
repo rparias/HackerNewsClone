@@ -1,3 +1,7 @@
-export default function hello() {
-  return 'Hello World';
+class App {
+  constructor() {
+    console.log('app works!');
+  }
 }
+
+new App();

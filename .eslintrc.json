@@ -17,7 +17,8 @@
     "sourceType": "module"
   },
   "rules": {
-    "no-console": "off"
+    "no-console": "off",
+    "no-new": "off"
   },
   "ignorePatterns": ["/dist/**"]
 }
