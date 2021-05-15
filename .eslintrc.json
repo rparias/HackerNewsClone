@@ -18,7 +18,8 @@
   },
   "rules": {
     "no-console": "off",
-    "no-new": "off"
+    "no-new": "off",
+    "class-methods-use-this": "off"
   },
   "ignorePatterns": ["/dist/**"]
 }
