@@ -2,7 +2,7 @@ export default function Story(story) {
   return `
   <div class="story">
     <div class="story-number">
-      <span class="number">${story.index}</span>
+      <span class="number">${story.index || ''}</span>
       <img src="https://news.ycombinator.com/grayarrow.gif" alt="upvote">
     </div>
     <div class="story-text">

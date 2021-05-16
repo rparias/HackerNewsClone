@@ -12,6 +12,7 @@
   --background-nav-color: #ff6600;
   --primary-font-color: #222222;
   --secondary-font-color: #828282;
+  --error-font-color: #ff0000;
 }
 
 body {
@@ -127,4 +128,8 @@ a {
 
 .second-row span:last-child:after {
   content: '';
+}
+
+.error {
+  color: var(--error-font-color);
 }

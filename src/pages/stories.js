@@ -1,8 +1,6 @@
 import view from '../utils/view';
 import Story from '../components/Story';
 
-const BASE_URL = 'https://node-hnapi.herokuapp.com';
-
 async function getStories(path) {
   let routePath;
   switch (path) {
@@ -21,7 +19,9 @@ async function getStories(path) {
     default:
       routePath = '';
   }
-  const response = await fetch(`${BASE_URL}${routePath}`);
+  const response = await fetch(
+    `${process.env.HACKER_NEWS_ENDPOINT}${routePath}`
+  );
   const stories = await response.json();
   return stories;
 }
