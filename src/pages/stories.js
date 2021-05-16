@@ -1,4 +1,5 @@
 import view from '../utils/view';
+import Story from '../components/Story';
 
 const BASE_URL = 'https://node-hnapi.herokuapp.com';
 
@@ -29,6 +30,8 @@ export default async function Stories(path) {
   const stories = await getStories(path);
   const hasStories = stories.length > 0;
   view.innerHTML = `<div>${
-    hasStories ? stories.map((story) => JSON.stringify(story)) : 'No stories'
+    hasStories
+      ? stories.map((story, i) => Story({ ...story, index: i + 1 })).join('')
+      : 'No stories'
   }</div>`;
 }

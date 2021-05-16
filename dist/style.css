@@ -11,11 +11,13 @@
   --background-container-color: #f6f6ef;
   --background-nav-color: #ff6600;
   --primary-font-color: #222222;
+  --secondary-font-color: #828282;
 }
 
 body {
   background: var(--background-body-color);
   font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
 }
 
 a {
@@ -34,7 +36,6 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 2px;
-  font-size: 10pt;
   line-height: 12px;
 }
 
@@ -75,4 +76,55 @@ a {
 
 .logo a span {
   font-weight: 700;
+}
+
+.story {
+  display: flex;
+  padding: 0.2rem;
+}
+
+.story-number {
+  color: var(--secondary-font-color);
+  min-width: 40px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.story-number img {
+  width: 10px;
+  height: 10px;
+  margin-top: 3px;
+}
+
+.number {
+  text-align: center;
+}
+
+.number::after {
+  content: '.';
+}
+
+.url {
+  font-size: 0.7rem;
+  color: var(--secondary-font-color);
+}
+
+.url:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.second-row {
+  font-size: 0.6rem;
+  color: var(--secondary-font-color);
+}
+
+.second-row span::after {
+  content: '|';
+  margin: 0 2px;
+}
+
+.second-row span:last-child:after {
+  content: '';
 }
