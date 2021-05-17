@@ -171,3 +171,7 @@ a {
   color: var(--secondary-font-color);
   font-size: 0.75rem;
 }
+
+.active {
+  color: var(--background-body-color);
+}
