@@ -1,5 +1,6 @@
 import view from '../utils/view';
 import Story from '../components/Story';
+import Comment from '../components/Comment';
 
 async function getStory() {
   const storyId = window.location.hash.split('?id=')[1];
@@ -32,7 +33,7 @@ export default async function Item() {
   <hr />
   ${
     hasComments
-      ? story.comments.map((comment) => JSON.stringify(comment)).join('')
+      ? story.comments.map((comment) => Comment(comment)).join('')
       : 'No comments'
   }
   `;

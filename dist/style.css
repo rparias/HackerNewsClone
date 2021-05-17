@@ -133,3 +133,41 @@ a {
 .error {
   color: var(--error-font-color);
 }
+
+.nested-comments-0 {
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+.nested-comments-1 {
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+  padding-top: 0.3em;
+  padding-left: 0.75em;
+}
+
+.nested-comments-2 {
+  margin-left: 3em;
+  margin-bottom: 0.5em;
+  padding-top: 0.3em;
+  padding-left: 0.75em;
+}
+
+.nested-comments-3 {
+  margin-left: 4em;
+  margin-bottom: 0.5em;
+  padding-top: 0.3em;
+  padding-left: 0.75em;
+}
+
+.nested-comments-4 {
+  margin-left: 5em;
+  margin-bottom: 0.5em;
+  padding-top: 0.3em;
+  padding-left: 0.75em;
+}
+
+.comment-header {
+  color: var(--secondary-font-color);
+  font-size: 0.75rem;
+}
