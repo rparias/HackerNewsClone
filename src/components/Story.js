@@ -13,9 +13,9 @@ export default function Story(story) {
       <div class="second-row">
         <span>${story.points} points by ${story.user} ${story.time_ago}</span>
         <span>${story.comments_count} comments</span>
-        <span class="favorite">
+        <span class="favorite" data-story='${JSON.stringify(story)}'>
             <img class="heart" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Heart_font_awesome.svg/32px-Heart_font_awesome.svg.png" alt="favorites">
-            Add To Favorites
+            ${story.isFavorite ? 'Remove from favorites' : 'Add to favorites'}
           </span>
         </div>
     </div>

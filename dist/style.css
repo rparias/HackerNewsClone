@@ -180,6 +180,11 @@ a {
   color: var(--secondary-font-color);
 }
 
+.favorite:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .favorite img {
   width: 0.5rem;
   height: 0.5rem;
