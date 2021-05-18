@@ -20,7 +20,8 @@
     "no-console": "off",
     "no-new": "off",
     "class-methods-use-this": "off",
-    "no-case-declarations": "off"
+    "no-case-declarations": "off",
+    "func-names": "off"
   },
   "ignorePatterns": ["/dist/**"]
 }
