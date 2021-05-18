@@ -175,3 +175,12 @@ a {
 .active {
   color: var(--background-body-color);
 }
+
+.favorite {
+  color: var(--secondary-font-color);
+}
+
+.favorite img {
+  width: 0.5rem;
+  height: 0.5rem;
+}

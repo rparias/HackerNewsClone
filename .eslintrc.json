@@ -19,7 +19,8 @@
   "rules": {
     "no-console": "off",
     "no-new": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "no-case-declarations": "off"
   },
   "ignorePatterns": ["/dist/**"]
 }

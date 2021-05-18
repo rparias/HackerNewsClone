@@ -1,4 +1,7 @@
 import RouterHandler from './router';
+import store from './store';
+
+console.log(store);
 
 function setActiveLink() {
   const links = document.querySelectorAll('.header-link');
