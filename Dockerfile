@@ -1,24 +1,18 @@
-FROM node/node:alpine3.13
-
 # install dependencies
+FROM node:16.2.0-slim
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 
-# Copy all local files into the image.
-COPY . .
-
-RUN npm run build
-
-###
-# Only copy over the Node pieces we need
-# ~> Saves 35MB
-###
-FROM node/node:16.1.0-slim
-
+# build
+FROM node:16.2.0-slim
 WORKDIR /app
 COPY --from=0 /app .
 COPY . .
+RUN npm run build
 
-EXPOSE 3000
-CMD ["node", "./dist"]
+# nginx
+FROM nginx
+COPY --from=1 /app/dist /usr/share/nginx/html
+
+#docker run --name nginx -d -p 8080:80 rparias/hackernewsclone
