@@ -82,6 +82,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: rparias/hackernewsclone:$BUILD_NUMBER, rparias/hackernewsclone:latest
+          tags: rparias/hackernewsclone:$GITHUB_RUN_NUMBER, rparias/hackernewsclone:latest
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
